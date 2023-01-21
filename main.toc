@@ -1,0 +1,27 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Documentazione}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}MediaPipe Hands}{3}{section.1.1}%
+\contentsline {subsubsection}{Specifica delle pipeline}{4}{subsubsection*.2}%
+\contentsline {subsection}{\numberline {1.1.1}Modelli}{4}{subsection.1.1.1}%
+\contentsline {subsubsection}{Palm Detection Model}{4}{subsubsection*.3}%
+\contentsline {subsubsection}{Hand Landmark Model}{5}{subsubsection*.4}%
+\contentsline {subsection}{\numberline {1.1.2}API}{5}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Opzioni di configurazione}{5}{subsection.1.1.3}%
+\contentsline {paragraph}{\texttt {STATIC\_IMAGE\_MODE}}{5}{paragraph*.6}%
+\contentsline {paragraph}{\texttt {MAX\_NUM\_HANDS}}{5}{paragraph*.7}%
+\contentsline {paragraph}{\texttt {MODEL\_COMPLEXITY}}{5}{paragraph*.8}%
+\contentsline {paragraph}{\texttt {MIN\_DETECTION\_CONFIDENCE}}{6}{paragraph*.9}%
+\contentsline {paragraph}{\texttt {MIN\_TRACKING\_CONFIDENCE}}{6}{paragraph*.10}%
+\contentsline {subsubsection}{Output}{6}{subsubsection*.11}%
+\contentsline {paragraph}{\texttt {MULTI\_HAND\_LANDMARKS}}{6}{paragraph*.12}%
+\contentsline {paragraph}{\texttt {MULTI\_HAND\_WORLD\_LANDMARKS}}{6}{paragraph*.13}%
+\contentsline {paragraph}{\texttt {MULTI\_HAND\_HANDEDNESS}}{6}{paragraph*.14}%
+\contentsline {subsubsection}{OpenGL ES}{6}{subsubsection*.15}%
+\contentsline {section}{\numberline {1.2}Struttura del progetto di partenza}{8}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}MainActivity}{8}{subsection.1.2.1}%
+\contentsline {subsubsection}{onCreate}{8}{subsubsection*.17}%
+\contentsline {subsubsection}{onResume}{9}{subsubsection*.18}%
+\contentsline {subsubsection}{onPause}{9}{subsubsection*.19}%
+\contentsline {subsubsection}{setupLiveDemoUiComponents}{9}{subsubsection*.20}%
+\contentsline {subsubsection}{setupStreamingModePipeline}{9}{subsubsection*.21}%

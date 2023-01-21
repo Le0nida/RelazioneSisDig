@@ -1,0 +1,45 @@
+\documentclass[12pt]{book}    
+\usepackage{csquotes}
+\usepackage[backend=bibtex,
+                style=authoryear,
+                natbib=true, 
+                style=numeric-comp
+                ]{biblatex}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}    
+\usepackage{amsmath}    
+\usepackage{graphicx}    
+\usepackage{xcolor}    
+\usepackage{float}    
+\usepackage{titlesec}    
+\usepackage{subcaption}    
+\usepackage{multicol}    
+\usepackage{enumitem}    
+\usepackage{setspace}    
+\usepackage{mdframed}    
+\usepackage{minted}
+\usepackage[hidelinks] {hyperref}
+%\usepackage{listings}
+\usepackage[italian]{babel}
+    
+\definecolor{lightgray}{gray}{0.95}    
+    
+% Stile dei titoli dei capitoli        
+\definecolor{gray75}{gray}{0.75}    
+\newcommand{\hsp}{\hspace{20pt}}    
+\titleformat{\chapter}[hang]    
+{\Huge\bfseries}    
+{\thechapter\hsp\textcolor{gray75}{|}\hsp}    
+{0pt}    
+{\Huge\bfseries}
+
+\newenvironment{multicolfigure}
+  {\par\medskip\noindent\minipage{\linewidth}}
+  {\endminipage\par\medskip}
+
+\onehalfspacing  
+                                                                                 
+\begin{document}
+\tableofcontents
+
+\input{documentazione.tex}
+\end{document}
