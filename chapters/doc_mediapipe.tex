@@ -1,4 +1,4 @@
-\chapter{Documentazione}
+\chapter{Introduzione MediaPipe}
 
 L'applicazione sfrutta le potenzialità offerte dalla libreria \texttt{MediaPipe}, che utilizza soluzioni basate su Machine Learning nel contesto dello streaming multimediale. 
 In particolare, noi abbiamo sfruttato la soluzione per il riconoscimento del movimento delle mani: \textbf{MediaPipe Hands}.\\
@@ -49,7 +49,7 @@ Il modello apprende quindi una rappresentazione della posizione del'interno dell
 \noindent Per arrivare a questo risultato sono state annotate manualmente circa 30 mila immagini dal mondo reale con 21 coordinate 3D (valore Z preso tramite mappa di profondità). E' stato inoltre utilizzato un modello di mano sintetica su vari sfondi, mappato alle corrispondenti coordinate, in modo tale da avere un accuratezza maggiore.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/1.png}
+    \includegraphics[width=0.8\textwidth]{images/landmarks.png}
 \end{figure}
 
 
@@ -147,7 +147,7 @@ Nella porzione di codice sottostante viene mostrato un esempio di utilizzo.
 Oltre a file ausiliari come il \textit{manifest} o gli \textit{xml} di configurazione, il cuore del progetto è rappresentato da 3 file nella cartella \texttt{hands/java/com/google/mediapipe/examples/hands}.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{images/2.png}
+    %\includegraphics[width=0.5\textwidth]{images/2.png}
 \end{figure}
 \noindent Ovviamente, \texttt{MainActivity} corrisponde all'entry point dell'applicazione, partiamo quindi dall'analisi di questo file.
 
