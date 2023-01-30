@@ -18,14 +18,15 @@
 \contentsline {paragraph}{\texttt {MULTI\_HAND\_WORLD\_LANDMARKS}}{6}{paragraph*.13}%
 \contentsline {paragraph}{\texttt {MULTI\_HAND\_HANDEDNESS}}{6}{paragraph*.14}%
 \contentsline {subsubsection}{OpenGL ES}{6}{subsubsection*.15}%
-\contentsline {section}{\numberline {1.2}Struttura del progetto di partenza}{8}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}MainActivity}{8}{subsection.1.2.1}%
-\contentsline {subsubsection}{onCreate}{8}{subsubsection*.17}%
-\contentsline {subsubsection}{onResume}{9}{subsubsection*.18}%
-\contentsline {subsubsection}{onPause}{9}{subsubsection*.19}%
-\contentsline {subsubsection}{setupLiveDemoUiComponents}{9}{subsubsection*.20}%
-\contentsline {subsubsection}{setupStreamingModePipeline}{9}{subsubsection*.21}%
-\contentsline {chapter}{\numberline {2}...}{11}{chapter.2}%
-\contentsline {chapter}{\numberline {3}...}{13}{chapter.3}%
-\contentsline {chapter}{\numberline {4}...}{15}{chapter.4}%
-\contentsline {chapter}{\numberline {5}...}{17}{chapter.5}%
+\contentsline {chapter}{\numberline {2}Struttura del progetto}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Overview}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Applicazione finale}{10}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}BaseActivity, MainActivity e PdfActivity}{11}{subsection.2.2.1}%
+\contentsline {subsubsection}{BaseActivity}{11}{subsubsection*.18}%
+\contentsline {paragraph}{Variabili}{11}{paragraph*.19}%
+\contentsline {paragraph}{Metodi}{12}{paragraph*.20}%
+\contentsline {subsubsection}{MainActivity}{12}{subsubsection*.21}%
+\contentsline {subsubsection}{PdfActivity}{13}{subsubsection*.22}%
+\contentsline {chapter}{\numberline {3}...}{15}{chapter.3}%
+\contentsline {chapter}{\numberline {4}...}{17}{chapter.4}%
+\contentsline {chapter}{\numberline {5}...}{19}{chapter.5}%
