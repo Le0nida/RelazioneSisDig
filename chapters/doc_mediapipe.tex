@@ -133,55 +133,10 @@ Nella porzione di codice sottostante viene mostrato un esempio di utilizzo.
 
     // Avvio della fotocamera dopo che GLSurfaceView si è connesso
     glSurfaceView.post(
-        () ->
-            cameraInput.start(
+        () -> cameraInput.start(
                 this,
                 hands.getGlContext(),
                 CameraInput.CameraFacing.FRONT,
                 glSurfaceView.getWidth(),
                 glSurfaceView.getHeight()));
-
 \end{minted}
-
-\section{Struttura del progetto di partenza}
-Oltre a file ausiliari come il \textit{manifest} o gli \textit{xml} di configurazione, il cuore del progetto è rappresentato da 3 file nella cartella \texttt{hands/java/com/google/mediapipe/examples/hands}.
-\begin{figure}[H]
-    \centering
-    %\includegraphics[width=0.5\textwidth]{images/2.png}
-\end{figure}
-\noindent Ovviamente, \texttt{MainActivity} corrisponde all'entry point dell'applicazione, partiamo quindi dall'analisi di questo file.
-
-\subsection{MainActivity}
-In particolare, verrà analizzato il comportamento dell'applicazione quando viene preso l'input tramite streaming video dalla fotocamera. Sono presenti infatti 3 \texttt{InputSource} disponibili: \texttt{CAMERA}, \texttt{VIDEO} e \texttt{IMAGE}.\\
-\\
-\noindent Vengono inizialmente create le istanze di:
-\begin{itemize}
-    \item Hands
-    \item CameraInput
-    \item InputSource
-    \item SolutionGlSurfaceView$<$HandsResult$>$ 
-\end{itemize}
-
-\noindent Successivamente abbiamo 3 metodi implementati con \textit{override}, ereditati dall'estensione di \texttt{AppCompactActivity}, un modello predefinito fornito da Android Studio.
-\subsubsection{onCreate}
-Viene passato un \textit{Bundle} in input, utilizzato per chiamare la \texttt{onCreate} della classe estesa. In Android Studio i \textit{Bundle} si utilizzano solitamente per il passaggio di dati da un attività all'altra, in questo caso abbiamo un istanza di uno stato salvato precedentemente (e.g. l'applicazione era stata messa in background).\\
-Viene poi settato il \textit{ContentView} (ovvero il layout della schermata coi pulsanti) tramite il file \texttt{activity\_main.xml}, che definisce appunto il layout.\\
-Infine, viene chiamata la funzione \texttt{setupLiveDemoUiComponents()} per inizializzare i componenti per lo streaming video.
-
-
-\subsubsection{onResume}
-Dopo essere stata chiamata la \texttt{onResume} della classe estesa, si istanzia un nuovo \texttt{CameraInput}, passandogli l'\textit{activity} corrente, per poi settare il \textit{FrameListener}.\\
-Successivamente viene utilizzata l'istanza di \texttt{SolutionGlSurfaceView<HandsResult>} per chiamare il metodo interno \texttt{post}, passandogli la funzione \texttt{startCamera()} (il cui scopo è quello di inizializzare lo streaming video). In questo modo, tramite la \texttt{post} ereditata dalla classe \texttt{View}, viene eseguita la funzione passata ed esposto l'output nell'interfaccia utente.
-
-
-\subsubsection{onPause}
-Dopo essere stata chiamata la \texttt{onPause} della classe estesa, viene nascosta la visibilità del render (\texttt{glSurfaceView}) e viene fermato il flusso video in input dalla fotocamera.
-
-
-\subsubsection{setupLiveDemoUiComponents}
-Questo metodo viene chiamato all'inizializzazione. Recupera il bottone per avviare lo streaming e ci aggancia un listener sul click. Se è già impostata la modalità di assunzione dell'input dalla fotocamera non fa nulla, altrimenti termina la pipeline corrente e chiama la \texttt{setupStreamingModePipeline(InputSource source)}, passando come \texttt{source} il valore di \texttt{InputSource.CAMERA}.
-
-
-\subsubsection{setupStreamingModePipeline}
-Questa funzione ha lo scopo di inizializzare un nuova pipeline per il rilevamento dell mani, differenziata in base al tipo di \texttt{InputSource}.\\
-Per prima cosa, viene creata una nuova istanza di \texttt{HandsResultGlRenderer}
