@@ -1100,10 +1100,10 @@ INPUT ./chapters/applicazione_esterna.tex
 INPUT chapters/applicazione_esterna.tex
 INPUT ./chapters/applicazione_esterna.tex
 INPUT chapters/applicazione_esterna.tex
-INPUT ./chapters/considerazioni_finali.tex
-INPUT chapters/considerazioni_finali.tex
-INPUT ./chapters/considerazioni_finali.tex
-INPUT chapters/considerazioni_finali.tex
+INPUT ./chapters/osservazioni_finali.tex
+INPUT chapters/osservazioni_finali.tex
+INPUT ./chapters/osservazioni_finali.tex
+INPUT chapters/osservazioni_finali.tex
 INPUT main.aux
 INPUT ./main.out
 INPUT ./main.out

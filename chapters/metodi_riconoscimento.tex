@@ -6,7 +6,7 @@ Come già specificato in \ref{intro}, il framework mette a disposizione due coll
     \item la lista dei landmark con coordinate X e Y normalizzate all'intervallo [0.0 - 1.0] per le dimensioni dell'immagine in input, la coordinata Z trova il suo centro nella posizione del landmark del polso
 \end{itemize}
 
-\noindent Abbiamo utilizzato entrambe le strutture per la rilevazione delle gesture, insieme a alcune o tutte le tecniche descritte di seguito, impiegando l'una o l'altra a seconda del tipo di azione alla quale la particolare gesture è collegata (vedi \ref{gesture}).
+\noindent Abbiamo utilizzato entrambe le strutture per la rilevazione delle gesture, insieme a una combinazione delle le tecniche descritte di seguito, impiegando l'una o l'altra a seconda del tipo di azione alla quale la particolare gesture è collegata (vedi \ref{gesture}).
 
 \section{Distanze tra landmark}
 
@@ -28,13 +28,13 @@ Questa distanza è calcolata sommando le distanze tra i quattro landmark del dit
 
 Abbiamo poi accoppiato questa tecnica con la mappatura delle misure a un range di livelli discreto, in modo da ridurre l'impatto dell'instabilità dei valori forniti dal framework, a scapito di un minimo livello di accuratezza.
 
-\section{Calcolo vettoriale}
+\section{Lo spazio tridimensionale}
 
-Progredendo nell'implementazione di altre gesture, abbiamo capito che la sola distanza di alcuni landmark non è abbastanza per discernere con accuratezza le gesture tra di loro, dato che molte posizioni che vogliamo identificare presentano notevoli similitudini nello spazio delle distanze tra landmark.
+Le tecniche implementato fino ad ora non tengono veramente conto del fatto che le gesture hanno una forte caratteristica tridimensionale, in quanto riducono lo stato della mano a un insieme di parametri monodimensionali, abbiamo infatti notato che molte posizioni che vogliamo identificare presentano notevoli similitudini nello spazio delle distanze tra landmark.
 
 Un parametro che abbiamo scelto di adottare nel sistema di riconoscimento è quello dell'allineamento nello spazio tridimensionale di un certo dito, o più in generale di un insieme di landmark.
 
-Per ottenere questa informazione, abbiamo implementato una serie di funzioni di utilità che permettono di identificare il discostamento che una serie di punti hanno dalla retta 3D formata da altri due punti dati; il calcolo di questa misura, unito a una lista di valori di errore rilevati in modo sperimentale, permette di quantificare il livello di ripiegamento di un certo dito.
+Per ottenere questa informazione, abbiamo implementato una serie di funzioni di utilità che permettono di identificare il discostamento che una serie di punti ha dalla retta 3D formata da altri due punti dati; il calcolo di questa misura, unito a una lista di valori di errore ottenuti in modo sperimentale, permette di quantificare il livello di ripiegamento di un certo dito.
 
 Grazie a questa tecnica, unita alle metodologie sopra descritte, siamo riusciti a ottenere una identificazione molto più accurata della posizione delle dita di una mano e a ridurre significativamente il grado di sovrapposizione tra gesture.
 
@@ -42,6 +42,12 @@ Anche in questo caso abbiamo implementato la normalizzazione a livelli delle mis
 
 \section{Rilevamento velocità e direzione}
 
+L'utilità di un sistema di riconoscimento di gesture non si ferma soltanto alla rilevazione di posizioni statiche, è infatti desiderabile poter ottenere anche informazioni relative alla velocità e direzione di certi landmark significativi, utilizzando poi questi dati per abilitare l'utente a una gamma più vasta di interazioni.
 
+Per una delle gesture implementate, si è reso necessario creare una apposita classe \texttt{TimedPoint}, che mette a disposizione funzionalità di calcolo della velocità media e della direzione tra due \texttt{TimedPoint}, questi dati vengono poi utilizzati per abilitare l'identificazione di gesture in seguito a un movimento definito a una certa velocità media.
+
+Questi calcoli ci hanno permesso di definire gesture \textbf{dinamiche}, che devono essere rilevate \textbf{in seguito a un movimento} effettuato a una certa velocità e in una certa direzione, e non in seguito all'avverarsi di una posizione statica.
+
+E' importante specificare che anche le gesture cosiddette \textit{statiche}, in certi casi vengono utilizzate per ottenere parametri che vengono poi applicati in particolari modi all'applicazione, il fatto che questi parametri sono dinamici non le categorizza come gesture dinamiche. 
 
 

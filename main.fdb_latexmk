@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1675101543 "main.aux" "main.bbl" "main" 1675101544
+["bibtex main"] 1675182884 "main.aux" "main.bbl" "main" 1675182936
   "/usr/share/texlive/texmf-dist/bibtex/bst/biblatex/biblatex.bst" 1643926307 65483 fc69f364ef63c07bf68a2ab4b323f197 ""
-  "main-blx.bib" 1675101544 340 9808bdce1baf21af67814872548f430c "pdflatex"
-  "main.aux" 1675101544 5493 ce9f07afc9212d587318c93d3aea120e "pdflatex"
+  "main-blx.bib" 1675182936 340 9808bdce1baf21af67814872548f430c "pdflatex"
+  "main.aux" 1675182936 6297 3c45dfbe3fcc9abfbc2806b578f4aa6a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1675101543 "main.tex" "main.pdf" "main" 1675101544
-  "/dev/null" 1675087673 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1675182935 "main.tex" "main.pdf" "main" 1675182936
+  "/dev/null" 1675172588 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1668014067 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -152,19 +152,19 @@
   "_minted-main/C8052A819393BBF280B54E637F1FF1C629F326B10C93B0835BF89EEB5731283A.pygtex" 1675101415 5037 6d1494056767f2fae89c1201611c2a6a ""
   "_minted-main/default.pygstyle" 1674997294 6365 683ea4fd81022f120108d52c508c17f9 ""
   "chapters/applicazione_esterna.tex" 1675003318 14 6e5b48293db562f78f946ce5b6ea4a09 ""
-  "chapters/considerazioni_finali.tex" 1675003318 14 6e5b48293db562f78f946ce5b6ea4a09 ""
   "chapters/doc_mediapipe.tex" 1675101415 10326 965117738f06c935a846ede1188ddf62 ""
-  "chapters/metodi_riconoscimento.tex" 1675101376 4493 06045dfd18ebf4ccbcd41883027bb1b6 ""
+  "chapters/metodi_riconoscimento.tex" 1675182934 5813 afb6a442ff0d2d8f1898fcc439f10293 ""
+  "chapters/osservazioni_finali.tex" 1675180681 5723 bb0c2f8cb30570bb01471a1ace0a747f ""
   "chapters/struct_progetto.tex" 1675101415 9401 3e91013279a482cb81d97d7b6ef10f2f ""
   "images/landmarks.png" 1675003318 142845 038590808e8abd4908b1c420de0579d9 ""
   "images/struct_demo.png" 1675101415 24513 0f99f19c10fbe1dcea1eb97d13f3c8ba ""
   "images/struct_progetto.png" 1675101415 52340 66961d9212a5d188cbfdb5c190ff83de ""
-  "main.aux" 1675101544 5493 ce9f07afc9212d587318c93d3aea120e "pdflatex"
-  "main.bbl" 1675101543 512 242e9db92557ac81f6b30ce4f9334513 "bibtex main"
-  "main.out" 1675101544 2443 7c5c195cf9b4b1eab3cf8da646e600b1 "pdflatex"
-  "main.run.xml" 1675101544 2563 793328c0d29963f2de908c4405529505 "pdflatex"
-  "main.tex" 1675101540 1388 3c687c06e6d819789cbb6a138cad8cc1 ""
-  "main.toc" 1675101544 2648 c907a1e78bcec9f17bda17c22a25ac4c "pdflatex"
+  "main.aux" 1675182936 6297 3c45dfbe3fcc9abfbc2806b578f4aa6a "pdflatex"
+  "main.bbl" 1675182884 512 242e9db92557ac81f6b30ce4f9334513 "bibtex main"
+  "main.out" 1675182936 3340 576c56ea679caa8cf37d1a602271b1a5 "pdflatex"
+  "main.run.xml" 1675182936 2563 793328c0d29963f2de908c4405529505 "pdflatex"
+  "main.tex" 1675180681 1386 697fdf9886c44f7c82662b43b011fafa ""
+  "main.toc" 1675182936 3206 5b78c1aca5dc9e79330a064109f434c8 "pdflatex"
   (generated)
   "main-blx.bib"
   "main.aux"
