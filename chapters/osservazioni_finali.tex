@@ -1,0 +1,60 @@
+\chapter{Osservazioni finali}
+
+\section{Analisi delle performance}
+
+\subsection{Limiti dell'applicazione}
+
+\subsubsection{Limiti imposti da MediaPipe}
+\begin{enumerate}
+    \item \textbf{Framerate limitato}: comprensibile contando che siamo su dispositivi mobile, meno elaborazioni facciamo meno batteria viene consumata.
+    \item \textbf{Dati imprecisi quando non tutte le dita vengono mostrate}: se si mostra una gesture che non espone tutte le dita bene in vista (pollice in su) e si muove la mano cambiando punto di vista, le coordinate rilevate dalla libreria non rimangono coerenti.
+    \item \textbf{Applicazione basata su immagini ben illuminate}: se nello stream video manca di luminosità l'accuratezza del rilevamento cala drasticamente (problema noto nel mondo di computer vision)
+\end{enumerate}
+
+\subsubsection{Limiti della nostra soluzione}
+\begin{enumerate}
+    \item \textbf{Consumo batteria relativamente elevato}: per una app mobile porre attenzione ai consumi è fondamentale, la nostra applicazione consuma un 2\% ogni 5 minuti circa su una batteria 4000mAh. Questo consumo è comprensibile considerando il lavoro che svolge; un fattore critico è rappresentato dall'impossibilità di avere momenti di stand-by in quanto il tracking delle mani lavora anche quando non vi sono mani da riconoscere, portando i momenti morti (dove non accade nulla ma l'applicazione è attiva) ad una fonte di spreco risorse.
+    \item \textbf{Lentezza di gesture}: essendo il framerate limitato bisogna effettuare le gesture con calma per stare dietro alle elaborazioni.
+    \item \textbf{Gesture non eccessivamente elastiche}: l'applicazione utilizza le proporzioni usando come riferimento la lunghezza fisica del dito medio fino ad arrivare al centro del polso; tutte le altre misure rilevate sono comparate con quella. Dal punto di vista teorico dovrebbe funzionare su tutte le mani, ma, dovendo discriminare le gesture in modo abbastanza rigido per evitare che gesture differenti si confondano tra di loro, per effettuare correttamente i segni in alcuni casi le dita vanno orientate in un modo specifico (\texttt{crab} gesture $=$ il pollice deve essere particolarmente inclinato (vincolo posto per non confondere tale gesture con il \texttt{pinch})).
+\end{enumerate}
+
+\subsection{Profiling con Android Studio}
+I dati presentati in seguito sono stati raccolti dal profiler di Android Studio su un dispositivo con le seguenti specifiche:
+\begin{itemize}
+    \item \textbf{GPU}: ARM MALI-G72 MP3 (850MHz)
+    \item \textbf{CPU}: Octa-core, 2 processori: 4x 2.3GHz ARM Cortex-A73 (Quad-core), 4x 1.7GHz ARM Cortex-A53 (Quad-core)
+    \item \textbf{RAM}: 6GB
+\end{itemize}
+
+%% inserimento immagini profiling con commenti e analisi
+
+\section{Opinioni e sviluppi futuri}
+La possibilità di poter interagire con un dispositivo tramite una videocamera introduce un metodo alternativo di 
+interfacciamento con la macchina. Nel corso degli anni i computer si sono evoluti sempre di più mentre il 
+metodo per interagire con essi è rimasto sempre lo stesso: la tastiera.\\
+Solo nell'ultimo decennio, grazie ad una 
+sufficiente maturazione della tecnologia, si è cominciato concretamente a pensare a mezzi differenti per comunicare 
+con i dispositivi. D'altronde siamo di fronte ad una situazione dove due macchine computazionali potenti (cervello e 
+computer) nella loro collaborazione sono ostacolate dall'interfacciamento Input/Output che gli si pone in mezzo ed è
+per questo che soluzioni che rendono più immediato e naturale il trasferimento dei dati saranno probabilmente l'argomento 
+di discussione principale degli anni a seguire.\\
+\\
+\noindent Il nostro team si è occupato di analizzare un “proof-of-concept” di una 
+applicazione PdfReader gestita non dall'interfacciamento proposto dello schermo touch ma dalla videocamera 
+frontale che rileva specifiche gesture. Svolgendo i test finali siamo rimasti soddisfatti del risultato; l'unico tallone 
+d'Achille è il fatto di avere un riconoscimento gesti in alcuni casi abbastanza rigido, dovuto proprio ai dati non molto 
+precisi che Mediapipe pone quando non tutte le dita vengono mostrate.\\
+Un'idea di risoluzione sarebbe porre due videocamere che riprendono due angolazioni diverse e poi 
+elaborate insieme per ricostruire la posizione delle dita. Questa proposta però non avrebbe molti punti a favore 
+considerando che nei dispositivi già sul mercato non sarebbe compatibile oltre al fatto di svolgere il doppio delle 
+elaborazioni, ma per prodotti non mobile ancora da inserire sul mercato come una lavagna LIM che adotta questa 
+tecnica non sarebbe una idea da scartare a priori.\\
+\\
+\noindent In questo progetto ci si è limitati a gestire un pdf, ma una volta che la logica di gesture detection è stata messa a punto 
+e anche il consumo migliorato ecco che cambiare scenario diviene immediato: è sufficiente collegare le gesture a determinate 
+azioni. Un esempio potrebbe essere la simulazione del cursore tramite gesture, permettendo quindi di navigare nell'interfaccia proposta 
+dallo schermo. Combinando poi il riconoscimento delle mani con altri tipi di riconoscimenti (face, body, ...) potrebbe 
+nascere qualcosa di interessante. Rimanendo però nel mondo mobile, potendo consumare poca batteria e di 
+conseguenza non avendo una grande potenza computazionale a disposizione, il framerate limitato non permette di riconoscere accuratamente gesture dinamiche 
+veloci, ciò nonostante si riescono a realizzare applicazioni con interazioni più naturali rispetto ai classici pulsanti. Sarebbe valido proporre una soluzione 
+dove l'applicazione non elabora direttamente i dati, ma delega un server remoto con una potenza di calcolo molto maggiore.
