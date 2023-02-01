@@ -75,10 +75,19 @@ Il funzionamento di questa classe è analogo a quella mostrata in precedenza. Vi
 
 
 \subsection{Gesture}
-...
+All'interno del package \texttt{hands/java/com/hands/gesture} sono presenti 6 classi, una per ogni gesture, ed una interfaccia (\texttt{IHandGesture}).\\
+Quest'ultima dichiara la funzione che tutte le altri classi, tranne \texttt{ScrollPageGesture}, implementeranno per effettuare il controllo delle gesture.
+\begin{center}
+    \begin{minted}[bgcolor=lightgray,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,escapeinside=||,mathescape=true]{C}
+        boolean checkGesture(HandsResult handsResult);
+    \end{minted}
+\end{center}
+\noindent \texttt{ScrollPageGesture} non implementa l'interfaccia in quanto la sua funzione di controllo restituisce un intero.\\
+\\
+\noindent La logica all'interno delle funzioni di controllo verrà analizzata nei capitoli successivi.
 
 \subsection{Utils}
 ...
 
-\section{CPP}
+\subsection{CPP}
 ...
