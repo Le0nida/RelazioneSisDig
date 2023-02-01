@@ -63,7 +63,7 @@ Per quanto riguarda l'inizializzazione dello streaming video, vengono utilizzate
 \begin{itemize}
     \item \texttt{setupLiveDemoUiComponents}, all'interno della quale viene definito un bottone per attivare lo streaming che, una volta cliccato, causerà la chiamata alla stessa funzione della classe estesa (il cui scopo è quello di fermare la pipeline di acquisizione attuale (nel caso in cui la modalità di acquisizione sia diversa da \texttt{CAMERA})). Successivamente, viene chiamata la funzione che implementa effettivamente la pipeline, mostrata qui sotto.
     \item \texttt{setupStreamingModePipeline}, questa funzione è divisa sostanzialmente in 3 parti, oltre ad una preliminare nella quale vengono inizializzate le \texttt{TextView}. \begin{enumerate}
-        \item chiamata alla funzione \texttt{firstSetupStreamingModePipeline} di \texttt{BaseActivity} che crea delle nuove istanze di \texttt{HandsResultGlRenderer}, \texttt{Hands} e \texttt{glSurfaceView}. Tramite essa inizia lo streaming dalla fotocamera e, concorrentemente, la pipeline per il mapping dei \textbf{landamrks} della mano.
+        \item chiamata alla funzione \texttt{firstSetupStreamingModePipeline} di \texttt{BaseActivity} che crea delle nuove istanze di \texttt{HandsResultGlRenderer}, \texttt{Hands} e \texttt{glSurfaceView}. Tramite essa inizia lo streaming dalla fotocamera e, concorrentemente, la pipeline per il mapping dei \textbf{landmarks} della mano.
         \item settato il \textbf{listener} per il riconoscimento delle gesture, all'interno del quale vengono effettuate delle chiamate alle classi per il controllo e mostrato l'eventuale riconoscimento colorando le \texttt{Textview} definite prima.
         \item chiamata alla funzione \texttt{lastSetupStreamingModePipeline} di \texttt{BaseActivity} che chiama il metodo \texttt{post} di \texttt{glSurfaceView} visto in precedenza e definisce il nuovo \texttt{FrameLayout} con i dati trovati nella fase precedente.
     \end{enumerate}
@@ -78,7 +78,7 @@ Il funzionamento di questa classe è analogo a quella mostrata in precedenza. Vi
 All'interno del package \texttt{hands/java/com/hands/gesture} sono presenti 6 classi, una per ogni gesture, ed una interfaccia (\texttt{IHandGesture}).\\
 Quest'ultima dichiara la funzione che tutte le altri classi, tranne \texttt{ScrollPageGesture}, implementeranno per effettuare il controllo delle gesture.
 \begin{center}
-    \begin{minted}[bgcolor=lightgray,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,escapeinside=||,mathescape=true]{C}
+    \begin{minted}[bgcolor=lightgray,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,escapeinside=||,mathescape=true]{java}
         boolean checkGesture(HandsResult handsResult);
     \end{minted}
 \end{center}
@@ -87,9 +87,55 @@ Quest'ultima dichiara la funzione che tutte le altri classi, tranne \texttt{Scro
 \noindent La logica all'interno delle funzioni di controllo verrà analizzata nei capitoli successivi.
 
 \subsection{Utils}
-...
+All'interno del package \texttt{hands/java/com/hands/utils} sono presenti 5 classi di utilità.\\
+\subsubsection{TimedPoint}
+Rappresenta un oggetto composto dalle seguenti proprietà.
+\begin{minted}[bgcolor=lightgray,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,escapeinside=||,mathescape=true]{java}
+    public class TimedPoint {
 
+        public float x;
+        public float y;
+        public long timestamp;
+        ...
+    }
+\end{minted}
+
+\noindent Viene utilizzata all'interno di \texttt{ScrollPageGesture} per calcolare la velocità di movimento tra due landmarks.\\
+Viene usato il \textit{timestamp} per calcolare il tempo trascorso e le coordinate per la distanza, da cui si ricava appunto la velocità.
+
+\newpage
+\subsubsection{HandPoints}
+Classe di tipo enumerativo per associare delle costanti letterali ai 21 punti che rappresentano i landmarks forniti da \texttt{MediaPipe}.
+\begin{minted}[bgcolor=lightgray,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,escapeinside=||,mathescape=true]{java}
+    public enum HandPoints {
+        WRIST(0),
+        THUMB_BASE(1),
+        THUMB_LOWER(2),
+        THUMB_UPPER(3),
+        THUMB_TIP(4),
+        ...
+    }
+\end{minted}
+
+\subsubsection{Constants}
+Sono presenti alcune costanti di utilità.
+\begin{minted}[bgcolor=lightgray,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,escapeinside=||,mathescape=true]{java}
+    public final class Constants {
+
+        public static final int NUMERO_LIVELLI = 70;
+        ...
+    }
+\end{minted}
+
+\subsubsection{Utils e VectorUtils}
+All'interno di queste due classi sono presenti funzioni utilizzate dalle classi per il controllo delle gesture.\\
+In ognuna delle classi ci sono funzioni di basso livello che effettuano i calcoli di base, come ad esempio la distanza tra due punti. Per motivi di efficienza, abbiamo scelto di implementarle con delle chiamate a codice \texttt{C} (analisi nella \hyperref[chap:cpp]{\underline{sezione successiva}}).\\
+\\
+\noindent Abbiamo poi altre funzioni di più alto livello, come \texttt{fingerLevelsToWrist()}, che utilizzano le funzioni di base citate sopra per elaborare i dati, offrendo alle classi che le chiamano un interfaccia semplice e comoda da usare.
+
+\newpage
 \subsection{Binding funzioni C++}
+\label{chap:cpp}
 \noindent
 Molte delle funzionalità che abbiamo implementato richiedono una quantità moderatamente elevata di calcoli, che diventa estremamente rilevante se si considera che questi calcoli vengono eseguiti circa 30 volte al secondo, abbiamo quindi deciso di implementare alcune funzioni chiave in C++ per ottenere performance più adeguate.\\
 
@@ -97,7 +143,7 @@ Molte delle funzionalità che abbiamo implementato richiedono una quantità mode
 Avvalendoci della JNI (Java Native Interface) abbiamo potuto implementare funzioni in C++ e poi richiamarle dal nostro codice Java.\\
 
 \noindent
-Un semplice esempio di una funzione che abbiamo implementato in C++ utilizzando la JNI:
+Un semplice esempio di una funzione che abbiamo implementato in \texttt{C++} utilizzando la JNI:
 \begin{minted}[bgcolor=lightgray,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,escapeinside=||,mathescape=true]{cpp}
 extern "C" JNIEXPORT jdouble JNICALL
 Java_com_hands_utils_VectorUtils_dotProductWrap(JNIEnv *env, jclass clazz,
@@ -118,4 +164,6 @@ Java_com_hands_utils_VectorUtils_dotProductWrap(JNIEnv *env, jclass clazz,
 }
 \end{minted}
 
-Molte delle funzioni nelle classi \texttt{VectorUtils} e \texttt{Utils} sono state implementate in questo modo dato che contengono la maggior parte delle funzionalità matematiche utilizzate, tuttavia l'incremento ottenuto utilizzando questa tecnica, anche se rilevante, non è stato quello sperato, la cause potrebbe risiedere nell'overhead introdotto da ogni singola chiamata alla libreria C++ dinamica creata.
+\noindent Molte delle funzioni nelle classi \texttt{VectorUtils} e \texttt{Utils} sono state implementate in questo modo dato che contengono la maggior parte delle funzionalità matematiche utilizzate.\\
+Tuttavia l'incremento ottenuto utilizzando questa tecnica, anche se rilevante, non è stato quello sperato. La causa potrebbe risiedere nell'overhead introdotto da ogni singola chiamata alla libreria \texttt{C++} dinamica creata.
+

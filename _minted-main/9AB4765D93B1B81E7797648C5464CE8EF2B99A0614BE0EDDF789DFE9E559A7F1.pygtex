@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+    \PYG{k+kd}{public} \PYG{k+kd}{final} \PYG{k+kd}{class} \PYG{n+nc}{Constants} \PYG{p}{\PYGZob{}}
+
+        \PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kd}{final} \PYG{k+kt}{int} \PYG{n}{NUMERO\PYGZus{}LIVELLI} \PYG{o}{=} \PYG{l+m+mi}{70}\PYG{p}{;}
+        \PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+    \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

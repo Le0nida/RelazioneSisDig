@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+    \PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{TimedPoint} \PYG{p}{\PYGZob{}}
+
+        \PYG{k+kd}{public} \PYG{k+kt}{float} \PYG{n}{x}\PYG{p}{;}
+        \PYG{k+kd}{public} \PYG{k+kt}{float} \PYG{n}{y}\PYG{p}{;}
+        \PYG{k+kd}{public} \PYG{k+kt}{long} \PYG{n}{timestamp}\PYG{p}{;}
+        \PYG{p}{.}\PYG{p}{.}\PYG{p}{.}
+    \PYG{p}{\PYGZcb{}}
+\end{Verbatim}

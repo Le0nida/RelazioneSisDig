@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
-\PYG{+w}{        }\PYG{n}{boolean}\PYG{+w}{ }\PYG{n+nf}{checkGesture}\PYG{p}{(}\PYG{n}{HandsResult}\PYG{+w}{ }\PYG{n}{handsResult}\PYG{p}{)}\PYG{p}{;}
-\end{Verbatim}
