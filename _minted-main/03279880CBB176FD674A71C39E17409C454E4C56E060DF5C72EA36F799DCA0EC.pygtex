@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8\relax}]
+\PYG{k}{extern}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{C}\PYG{l+s}{\PYGZdq{}}\PYG{+w}{ }\PYG{n}{JNIEXPORT}\PYG{+w}{ }\PYG{n}{jdouble}\PYG{+w}{ }\PYG{n}{JNICALL}
+\PYG{n}{Java\PYGZus{}com\PYGZus{}hands\PYGZus{}utils\PYGZus{}VectorUtils\PYGZus{}dotProductWrap}\PYG{p}{(}\PYG{n}{JNIEnv}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{env}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{jclass}\PYG{+w}{ }\PYG{n}{clazz}\PYG{p}{,}
+\PYG{+w}{                                                }\PYG{n}{jdoubleArray}\PYG{+w}{ }\PYG{n}{v1}\PYG{p}{,}
+\PYG{+w}{                                                }\PYG{n}{jdoubleArray}\PYG{+w}{ }\PYG{n}{v2}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{c+c1}{//return dot product of v1 and v2}
+\PYG{+w}{    }\PYG{n}{jdouble}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{v1Array}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{env}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{GetDoubleArrayElements}\PYG{p}{(}\PYG{n}{v1}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{nullptr}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{jdouble}\PYG{+w}{ }\PYG{o}{*}\PYG{n}{v2Array}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{env}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{GetDoubleArrayElements}\PYG{p}{(}\PYG{n}{v2}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{nullptr}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{jsize}\PYG{+w}{ }\PYG{n}{v1Length}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{env}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{GetArrayLength}\PYG{p}{(}\PYG{n}{v1}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{jsize}\PYG{+w}{ }\PYG{n}{v2Length}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{env}\PYG{o}{\PYGZhy{}}\PYG{o}{\PYGZgt{}}\PYG{n}{GetArrayLength}\PYG{p}{(}\PYG{n}{v2}\PYG{p}{)}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{jdouble}\PYG{+w}{ }\PYG{n}{result}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{v1Length}\PYG{+w}{ }\PYG{o}{=}\PYG{o}{=}\PYG{+w}{ }\PYG{n}{v2Length}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{v1Length}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{+}\PYG{o}{+}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{result}\PYG{+w}{ }\PYG{o}{+}\PYG{o}{=}\PYG{+w}{ }\PYG{n}{v1Array}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{v2Array}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{;}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{result}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

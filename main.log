@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.11)  1 FEB 2023 17:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.11)  1 FEB 2023 18:23
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1116,7 +1116,37 @@ Overfull \hbox (18.33737pt too wide) in paragraph at lines 68--69
 []\OT1/cmr/m/n/12 chiamata al-la fun-zio-ne \OT1/cmtt/m/n/12 lastSetupStreamingModePipeline \OT1/cmr/m/n/12 di \OT1/cmtt/m/n/12 BaseActivity
  []
 
-[13]) (./chapters/metodi_riconoscimento.tex [14]
+
+Overfull \hbox (2.74146pt too wide) in paragraph at lines 78--80
+\OT1/cmr/m/n/12 Quest'ultima di-chia-ra la fun-zio-ne che tut-te le al-tri clas-si, tran-ne \OT1/cmtt/m/n/12 ScrollPageGesture\OT1/cmr/m/n/12 ,
+ []
+
+[13]
+\openout4 = `main.pyg'.
+
+ (./_minted-main/default.pygstyle) (./_minted-main/E515ED1C2643590410C6B952CA1E823A32B8E7B12CB65861BC1D36B09E87C76F.pygtex)
+Underfull \hbox (badness 10000) in paragraph at lines 85--88
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--95
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
+
+ []
+
+\openout4 = `main.pyg'.
+
+(./_minted-main/03279880CBB176FD674A71C39E17409C454E4C56E060DF5C72EA36F799DCA0EC.pygtex
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
+) [14]) (./chapters/metodi_riconoscimento.tex [15] [16
+
+]
 Capitolo 3.
 
 Overfull \hbox (9.2125pt too wide) in paragraph at lines 1--1
@@ -1124,12 +1154,10 @@ Overfull \hbox (9.2125pt too wide) in paragraph at lines 1--1
  []
 
 
-LaTeX Warning: Reference `gesture' on page 15 undefined on input line 10.
+LaTeX Warning: Reference `gesture' on page 17 undefined on input line 10.
 
-[15
-
-]
-<images/mano_vettore.png, id=265, 221.82875pt x 272.01625pt>
+[17]
+<images/mano_vettore.png, id=275, 221.82875pt x 272.01625pt>
 File: images/mano_vettore.png Graphic file (type png)
 <use images/mano_vettore.png>
 Package pdftex.def Info: images/mano_vettore.png  used on input line 42.
@@ -1137,16 +1165,16 @@ Package pdftex.def Info: images/mano_vettore.png  used on input line 42.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [16]) (./chapters/riconoscimento_gesture.tex [17 <./images/mano_vettore.png>] [18
+ [18]) (./chapters/riconoscimento_gesture.tex [19 <./images/mano_vettore.png>] [20
 
 ]
 Capitolo 4.
-<images/pollici_1.png, id=280, 99.9735pt x 121.05225pt>
+<images/pollici_1.png, id=292, 99.9735pt x 121.05225pt>
 File: images/pollici_1.png Graphic file (type png)
 <use images/pollici_1.png>
 Package pdftex.def Info: images/pollici_1.png  used on input line 14.
 (pdftex.def)             Requested size: 199.22491pt x 241.23943pt.
-<images/pollici_2.png, id=281, 175.25475pt x 202.95825pt>
+<images/pollici_2.png, id=293, 175.25475pt x 202.95825pt>
 File: images/pollici_2.png Graphic file (type png)
 <use images/pollici_2.png>
 Package pdftex.def Info: images/pollici_2.png  used on input line 19.
@@ -1156,8 +1184,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--25
 
  []
 
-[19 <./images/pollici_1.png> <./images/pollici_2.png>]
-<images/thumb_up.png, id=290, 355.92975pt x 322.20375pt>
+[21 <./images/pollici_1.png> <./images/pollici_2.png>]
+<images/thumb_up.png, id=300, 355.92975pt x 322.20375pt>
 File: images/thumb_up.png Graphic file (type png)
 <use images/thumb_up.png>
 Package pdftex.def Info: images/thumb_up.png  used on input line 38.
@@ -1167,30 +1195,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 50--53
 
  []
 
-[20 <./images/thumb_up.png>]
-<images/three_hand.png, id=297, 365.56575pt x 446.8695pt>
+[22 <./images/thumb_up.png>]
+<images/three_hand.png, id=307, 365.56575pt x 446.8695pt>
 File: images/three_hand.png Graphic file (type png)
 <use images/three_hand.png>
 Package pdftex.def Info: images/three_hand.png  used on input line 61.
 (pdftex.def)             Requested size: 208.39566pt x 254.74553pt.
-<images/four_hand.png, id=298, 320.397pt x 375.20175pt>
+<images/four_hand.png, id=308, 320.397pt x 375.20175pt>
 File: images/four_hand.png Graphic file (type png)
 <use images/four_hand.png>
 Package pdftex.def Info: images/four_hand.png  used on input line 81.
 (pdftex.def)             Requested size: 208.39566pt x 244.04427pt.
- [21 <./images/three_hand.png> <./images/four_hand.png>]
-<images/crab.png, id=307, 349.90726pt x 421.575pt>
+ [23 <./images/three_hand.png> <./images/four_hand.png>]
+<images/crab.png, id=317, 349.90726pt x 421.575pt>
 File: images/crab.png Graphic file (type png)
 <use images/crab.png>
 Package pdftex.def Info: images/crab.png  used on input line 103.
 (pdftex.def)             Requested size: 256.0774pt x 308.52554pt.
- [22 <./images/crab.png>]
-<images/pinch_1.png, id=315, 320.397pt x 383.031pt>
+ [24 <./images/crab.png>]
+<images/pinch_1.png, id=325, 320.397pt x 383.031pt>
 File: images/pinch_1.png Graphic file (type png)
 <use images/pinch_1.png>
 Package pdftex.def Info: images/pinch_1.png  used on input line 120.
 (pdftex.def)             Requested size: 187.55481pt x 224.22127pt.
-<images/pinch_2.png, id=316, 302.3295pt x 271.61475pt>
+<images/pinch_2.png, id=326, 302.3295pt x 271.61475pt>
 File: images/pinch_2.png Graphic file (type png)
 <use images/pinch_2.png>
 Package pdftex.def Info: images/pinch_2.png  used on input line 125.
@@ -1200,41 +1228,41 @@ Overfull \hbox (20.84084pt too wide) in paragraph at lines 125--126
  [][] 
  []
 
-[23 <./images/pinch_1.png> <./images/pinch_2.png>]
+[25 <./images/pinch_1.png> <./images/pinch_2.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 132--138
 
  []
 
-<images/scroll_1.png, id=324, 368.577pt x 391.4625pt>
+<images/scroll_1.png, id=335, 368.577pt x 391.4625pt>
 File: images/scroll_1.png Graphic file (type png)
 <use images/scroll_1.png>
 Package pdftex.def Info: images/scroll_1.png  used on input line 140.
 (pdftex.def)             Requested size: 208.39566pt x 221.338pt.
-<images/scroll_2.png, id=325, 369.17924pt x 388.45125pt>
+<images/scroll_2.png, id=336, 369.17924pt x 388.45125pt>
 File: images/scroll_2.png Graphic file (type png)
 <use images/scroll_2.png>
 Package pdftex.def Info: images/scroll_2.png  used on input line 145.
 (pdftex.def)             Requested size: 208.39566pt x 219.27382pt.
-) (./chapters/applicazione_esterna.tex [24 <./images/scroll_1.png> <./images/scroll_2.png>]
+) (./chapters/applicazione_esterna.tex [26 <./images/scroll_1.png> <./images/scroll_2.png>]
 Capitolo 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--8
 
  []
 
-<images/homepage.png, id=333, 369.38pt x 325.215pt>
+<images/homepage.png, id=344, 369.38pt x 325.215pt>
 File: images/homepage.png Graphic file (type png)
 <use images/homepage.png>
 Package pdftex.def Info: images/homepage.png  used on input line 11.
 (pdftex.def)             Requested size: 213.39566pt x 187.88046pt.
-[25
+[27
 
  <./images/homepage.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 20--29
 
  []
 
-<images/startcamera.png, id=341, 370.38374pt x 803.0pt>
+<images/startcamera.png, id=351, 370.38374pt x 803.0pt>
 File: images/startcamera.png Graphic file (type png)
 <use images/startcamera.png>
 Package pdftex.def Info: images/startcamera.png  used on input line 31.
@@ -1244,22 +1272,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 35--42
 
  []
 
-[26 <./images/startcamera.png>]
+[28 <./images/startcamera.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 50--60
 
  []
 
-<images/pdfactivity.png, id=346, 370.38374pt x 803.0pt>
+<images/pdfactivity.png, id=356, 370.38374pt x 803.0pt>
 File: images/pdfactivity.png Graphic file (type png)
 <use images/pdfactivity.png>
 Package pdftex.def Info: images/pdfactivity.png  used on input line 62.
 (pdftex.def)             Requested size: 166.71716pt x 361.44469pt.
-[27 <./images/pdfactivity.png>]) (./chapters/osservazioni_finali.tex [28]
+[29 <./images/pdfactivity.png>]) (./chapters/osservazioni_finali.tex [30]
 Capitolo 6.
-[29
+[31
 
 ]
-<images/profiling_app.png, id=367, 448.074pt x 204.765pt>
+<images/profiling_app.png, id=378, 448.074pt x 204.765pt>
 File: images/profiling_app.png Graphic file (type png)
 <use images/profiling_app.png>
 Package pdftex.def Info: images/profiling_app.png  used on input line 34.
@@ -1274,7 +1302,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 37--48
 
  []
 
-[30 <./images/profiling_app.png>]
+[32 <./images/profiling_app.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 52--59
 
  []
@@ -1284,29 +1312,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--59
 
  []
 
-[31]) [32] (./main.aux)
+[33]) [34] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D78B6B081459FA5070AECC0F7AD59419;5173.
+(rerunfilecheck)             Checksum: 793405AFD93FE1AB6BCFE72D6F77CDBE;5271.
+runsystem(rm main.pyg)...executed.
+
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 24830 strings out of 478287
- 450657 string characters out of 5849288
- 1002137 words of memory out of 5000000
- 42566 multiletter control sequences out of 15000+600000
- 477484 words of font info for 56 fonts, out of 8000000 for 9000
+ 24970 strings out of 478287
+ 453160 string characters out of 5849288
+ 1002303 words of memory out of 5000000
+ 42691 multiletter control sequences out of 15000+600000
+ 477820 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  73i,7n,77p,1881b,1531s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (32 pages, 3491495 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (34 pages, 3518781 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 366 compressed objects within 4 object streams
- 109 named destinations out of 1000 (max. 500000)
+ 474 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
+ 111 named destinations out of 1000 (max. 500000)
  339 words of extra memory for PDF output out of 10000 (max. 10000000)
 

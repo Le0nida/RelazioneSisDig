@@ -89,5 +89,33 @@ Quest'ultima dichiara la funzione che tutte le altri classi, tranne \texttt{Scro
 \subsection{Utils}
 ...
 
-\subsection{CPP}
-...
+\subsection{Binding funzioni C++}
+\noindent
+Molte delle funzionalità che abbiamo implementato richiedono una quantità moderatamente elevata di calcoli, che diventa estremamente rilevante se si considera che questi calcoli vengono eseguiti circa 30 volte al secondo, abbiamo quindi deciso di implementare alcune funzioni chiave in C++ per ottenere performance più adeguate.\\
+
+\noindent
+Avvalendoci della JNI (Java Native Interface) abbiamo potuto implementare funzioni in C++ e poi richiamarle dal nostro codice Java.\\
+
+\noindent
+Un semplice esempio di una funzione che abbiamo implementato in C++ utilizzando la JNI:
+\begin{minted}[bgcolor=lightgray,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,escapeinside=||,mathescape=true]{cpp}
+extern "C" JNIEXPORT jdouble JNICALL
+Java_com_hands_utils_VectorUtils_dotProductWrap(JNIEnv *env, jclass clazz,
+                                                jdoubleArray v1,
+                                                jdoubleArray v2) {
+    //return dot product of v1 and v2
+    jdouble *v1Array = env->GetDoubleArrayElements(v1, nullptr);
+    jdouble *v2Array = env->GetDoubleArrayElements(v2, nullptr);
+    jsize v1Length = env->GetArrayLength(v1);
+    jsize v2Length = env->GetArrayLength(v2);
+    jdouble result = 0;
+    if (v1Length == v2Length) {
+        for (int i = 0; i < v1Length; i++) {
+            result += v1Array[i] * v2Array[i];
+        }
+    }
+    return result;
+}
+\end{minted}
+
+Molte delle funzioni nelle classi \texttt{VectorUtils} e \texttt{Utils} sono state implementate in questo modo dato che contengono la maggior parte delle funzionalità matematiche utilizzate, tuttavia l'incremento ottenuto utilizzando questa tecnica, anche se rilevante, non è stato quello sperato, la cause potrebbe risiedere nell'overhead introdotto da ogni singola chiamata alla libreria C++ dinamica creata.
