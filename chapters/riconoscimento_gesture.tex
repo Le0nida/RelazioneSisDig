@@ -5,7 +5,7 @@
 Ci siamo occupati di riconoscere due tipologie di gesture: statiche e dinamiche.\\
 Gli strumenti utilizzati sono stati quelli appena spiegati nel capitolo precedente, come i vettori, 
 la velocità e le distanze dei vari punti rispetto al centro del polso, che identifica la nostra origine.\\
-La scelta di adottare le distanze dal polso rimane valida perché le dita si possono muovere solo di $\frac{\pi}{2}$. Bisogna però porre attenzione sui \textit{landmarks} del pollice che spesso assumono la stessa distanza dal polso pur essendo in posizioni diverse.
+La scelta di adottare le distanze dal polso rimane valida perché le dita si possono muovere solo di 180°, gli unici punti su cui porre attenzione sono quelli del pollice che spesso assumono la stessa distanza dal polso con gesture diverse:
 
 \vspace{+ 15 px}
 \begin{multicols}{2}
@@ -21,16 +21,10 @@ La scelta di adottare le distanze dal polso rimane valida perché le dita si pos
 \end{multicols}
 \vspace{+ 15 px}
 
-\noindent Quindi la distanza punto-centro polso può essere utilizzata come discriminante, ma diversamente sarebbe stato se le dita fossero state in grado di muoversi liberamente a 360°.\\
+\noindent Quindi la distanza punto-centro polso può essere utilizzata come discriminante, questione diversa sarebbe stata se le dita fossero state in grado di muoversi liberamente a 360°. Infine, ritornando alla problematica del pollice, in alcuni casi è stato necessario verificare se un dito preso in analisi fosse dritto o piegato.\\
 \newpage
 
-\noindent Una piccola anticipazione necessaria, ma che verrà trattata meglio nel prossimo capitolo, è che per le distanze sono state adottate le proporzioni 
-prendendo come punto di riferimento la lunghezza definita dal polso, lungo tutta la falange, fino ad arrivare alla punta del dito medio.\\
-In questa maniera non si lavora su lunghezze assolute e si permette all'applicazione di riconoscere gesti di mani diverse. 
-Inoltre, per facilitare il riconoscimento di alcune gesture, questa lunghezza è stata suddivisa in 70 livelli, numero non a caso, 
-ma scelto empiricamente in base alla precisione/affidabilità dei dati offerti da MediaPipe: un numero di livelli 
-maggiore significava quantizzare conservando molta precisione delle misure rilevate dalla libreria; 
-non possiamo affidarci troppo ai dati offerti, ma considerare un certo margine di errore, andando ad introdurlo nella fase di quantizzazione. 
+\noindent Piccola anticipazione necessaria ma che verrà trattata meglio nel prossimo capitolo: per le distanze sono state adottate le proporzioni prendendo come punto di riferimento la lunghezza definita dal polso, lungo tutta la falange, fino ad arrivare alla punta del dito medio. In questa maniera non si lavora su lunghezze assolute e si permette all’applicazione di riconoscere gesti di persone diverse. Inoltre questa lunghezza è stata suddivisa in 70 livelli, numero non a caso ma scelto empiricamente in base alla precisione/affidabilità dei dati offerti da MediaPipe: un numero di livelli maggiore significava quantizzare le distanze rilevate dalla libreria conservando molta della loro precisione; non possiamo  affidarci troppo ai dati offerti, ma considerare un certo margine di errore, andando ad introdurlo nella fase di quantizzazione(COLLEGAMENTO AL CAPITOLO DEI LIVELLI DI RIK). In seguito vediamo le tecniche adottate per ciascuna gesture, raggruppate per tipologia:
 
 \newpage
 \section{Algoritmi per il riconoscimento}
