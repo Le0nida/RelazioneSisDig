@@ -1,4 +1,5 @@
 \chapter{Metodologie di riconoscimento delle gesture}
+\label{chap:metodi}
 
 Come già specificato in \ref{intro}, il framework mette a disposizione due collezioni distinte di punti tridimensionali: 
 \begin{itemize}
@@ -26,7 +27,7 @@ Il passo successivo è stato quindi quello di trovare un modo per tentare di nor
 
 Questa distanza è calcolata sommando le distanze tra i quattro landmark del dito medio (le tre falangi e la base) e la distanza tra la base e il landmark polso.
 
-Abbiamo poi accoppiato questa tecnica con la mappatura delle misure a un range di livelli discreto, in modo da ridurre l'impatto dell'instabilità dei valori forniti dal framework, a scapito di un minimo livello di accuratezza.
+Abbiamo poi accoppiato questa tecnica con la mappatura delle misure a un range di livelli discreto, in modo da ridurre l'impatto dell'instabilità dei valori forniti dal framework, a scapito di un minimo livello di accuratezza, dopo diversi tentativi, abbiamo deciso di suddivedere la distanza scelta in 70 livelli, valore che ritiene una precisione sufficiente delle misure e mitiga gli effetti delle fluttuazioni.
 
 \section{Lo spazio tridimensionale}
 
