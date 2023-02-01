@@ -10,6 +10,7 @@
 \usepackage{graphicx}    
 \usepackage{xcolor}    
 \usepackage{float}    
+\usepackage{epigraph}
 \usepackage{titlesec}    
 \usepackage{subcaption}    
 \usepackage{multicol}    
@@ -20,8 +21,22 @@
 \usepackage{minted}
 \usepackage[hidelinks] {hyperref}
 %\usepackage{listings}
+\usepackage{etoolbox}
 \usepackage[italian]{babel}
-    
+
+\makeatletter
+\newlength\epitextskip
+\pretocmd{\@epitext}{\em}{}{}
+\apptocmd{\@epitext}{\em}{}{}
+\patchcmd{\epigraph}{\@epitext{#1}\\}{\@epitext{#1}\\[\epitextskip]}{}{}
+\makeatother
+
+\setlength\epigraphrule{0pt}
+\setlength\epitextskip{2ex}
+\setlength\epigraphwidth{.8\textwidth}
+
+\pretocmd{\epigraph}{\par}{}{}   
+
 \definecolor{lightgray}{gray}{0.95}    
     
 % Stile dei titoli dei capitoli        
@@ -29,8 +44,7 @@
 \newcommand{\hsp}{\hspace{20pt}}    
 \titleformat{\chapter}[hang]    
 {\Huge\bfseries}    
-{\thechapter\hsp\textcolor{gray75}{|}\hsp}    
-{0pt}    
+{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}    
 {\Huge\bfseries}
 
 \newenvironment{multicolfigure}

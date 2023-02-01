@@ -49,32 +49,13 @@ Esito non troppo deludente, ma pensare che dopo 2 ore e mezza di lettura il disp
 
 
 \section{Opinioni e sviluppi futuri}
-La possibilità di poter interagire con un dispositivo tramite una videocamera introduce un metodo alternativo di 
-interfacciamento con la macchina. Nel corso degli anni i computer si sono evoluti sempre di più mentre il 
-metodo per interagire con essi è rimasto sempre lo stesso: la tastiera.\\
-Solo nell'ultimo decennio, grazie ad una 
-sufficiente maturazione della tecnologia, si è cominciato concretamente a pensare a mezzi differenti per comunicare 
-con i dispositivi. D'altronde siamo di fronte ad una situazione dove due macchine computazionali potenti (cervello e 
-computer) nella loro collaborazione sono ostacolate dall'interfacciamento Input/Output che gli si pone in mezzo ed è
-per questo che soluzioni che rendono più immediato e naturale il trasferimento dei dati saranno probabilmente l'argomento 
-di discussione principale degli anni a seguire.\\
+La possibilità di poter interagire con un dispositivo tramite una videocamera introduce un metodo alternativo di interazione con la macchina. Nel corso degli anni i computer si sono evoluti sempre di più mentre il metodo per interagire con essi è rimasto sempre lo stesso: tastiera e mouse.\\
+Solo nell'ultimo decennio, grazie ad una sufficiente maturazione della tecnologia, si è cominciato concretamente a implementare mezzi differenti per comunicare con i dispositivi. D'altronde siamo di fronte ad una situazione dove due macchine computazionali potenti (cervello e computer) sono ostacolate, nella loro collaborazione, dalle limitazioni imposte dai metodi tradizionali di interazione ed è per questo che nuove soluzioni che rendono più immediato e naturale il controllo di dispositivi elettronici diventeranno sempre più rilevanti negli anni a seguire.\\
 \\
-\noindent Il nostro team si è occupato di analizzare un “proof-of-concept” di una 
-applicazione PdfReader gestita non dall'interfacciamento proposto dello schermo touch ma dalla videocamera 
-frontale che rileva specifiche gesture. Svolgendo i test finali siamo rimasti soddisfatti del risultato; l'unico tallone 
-d'Achille è il fatto di avere un riconoscimento gesti in alcuni casi abbastanza rigido, dovuto proprio ai dati non molto 
-precisi che Mediapipe pone quando non tutte le dita vengono mostrate.\\
-Un'idea di risoluzione sarebbe porre due videocamere che riprendono due angolazioni diverse e poi 
-elaborate insieme per ricostruire la posizione delle dita. Questa proposta però non avrebbe molti punti a favore 
-considerando che nei dispositivi già sul mercato non sarebbe compatibile oltre al fatto di svolgere il doppio delle 
-elaborazioni, ma per prodotti non mobile ancora da inserire sul mercato come una lavagna LIM che adotta questa 
-tecnica non sarebbe una idea da scartare a priori.\\
+\noindent Il nostro team si è occupato di analizzare un “proof-of-concept” di una applicazione PdfReader gestita non dall'interazione offerta dallo schermo touch ma dalla videocamera frontale che rileva specifiche gesture. Svolgendo i test finali siamo rimasti soddisfatti del risultato; l'unico tallone d'Achille risiede nelle limitazioni imposte dai modelli di riconoscimento.
+Esistono diversi metodi che potrebbero aiutare a migliorare i risultati del modello ML, come ad esempio software in grado di incorporare dati ricevuti da sensori LiDAR a immagini ricevute da una videocamera, come modelli più recenti di iPhone®, in modo da fornire ai modelli ML informazioni sulla distanza della scena ripresa.\\
 \\
-\noindent In questo progetto ci si è limitati a gestire un pdf, ma una volta che la logica di gesture detection è stata messa a punto 
-e anche il consumo migliorato ecco che cambiare scenario diviene immediato: è sufficiente collegare le gesture a determinate 
-azioni. Un esempio potrebbe essere la simulazione del cursore tramite gesture, permettendo quindi di navigare nell'interfaccia proposta 
-dallo schermo. Combinando poi il riconoscimento delle mani con altri tipi di riconoscimenti (face, body, ...) potrebbe 
-nascere qualcosa di interessante. Rimanendo però nel mondo mobile, potendo consumare poca batteria e di 
-conseguenza non avendo una grande potenza computazionale a disposizione, il framerate limitato non permette di riconoscere accuratamente gesture dinamiche 
-veloci, ciò nonostante si riescono a realizzare applicazioni con interazioni più naturali rispetto ai classici pulsanti. Sarebbe valido proporre una soluzione 
-dove l'applicazione non elabora direttamente i dati, ma delega un server remoto con una potenza di calcolo molto maggiore.
+\noindent In questo progetto ci si è limitati alla gestione di un pdf, ma una volta che la logica di gesture detection è stata messa a punto e anche il consumo migliorato, cambiare scenario diviene immediato: è sufficiente collegare le gesture a determinate azioni. Un esempio potrebbe essere la simulazione del cursore tramite gesture, permettendo quindi di navigare nell'interfaccia proposta dallo schermo. Combinando poi il riconoscimento delle mani con altri tipi di riconoscimenti (face, body, ...) potrebbe nascere qualcosa di interessante. Rimanendo però nel mondo mobile, dove le risorse energetiche e computazionali sono preziose e limitate, il framerate relativamente contenuto non permette di riconoscere accuratamente gesture dinamiche veloci, ciò nonostante si riescono a realizzare applicazioni con interazioni più naturali rispetto ai classici pulsanti.
+
+
+\epigraph{It was the stylus. I killed the Newton because of the stylus, if you're holding it, you can't use the other five that are attached to your wrist.}{Steve Jobs Movie, 2015}
