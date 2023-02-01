@@ -1,4 +1,4 @@
-\chapter{Applicazione per l'interazione con files PDF}
+\chapter{Funzionalità dell'applicazione}
 
 Come detto durante l'analisi della struttura del progetto, la nostra applicazione è strutturata con due classi principali: \texttt{MainActivity} e \texttt{PdfActivity}. Questo ci permette di distinguere e separare le due funzionalità principali della nostra applicazione.
 
@@ -8,7 +8,7 @@ Come detto durante l'analisi della struttura del progetto, la nostra applicazion
 \end{figure}
 
 
-\subsection{MainActivity}
+\section{MainActivity}
 Questa classe corrisponde all'entry point della nostra applicazione. All'interno di essa sono stati definiti due pulsanti: \texttt{StartCamera} e \texttt{PdfButton}.\\
 Il primo permette di attivare la telecamera frontale 
 del nostro dispositivo Android, previa autorizzazione dell'utente. In questo caso viene mostrato lo 
@@ -29,7 +29,7 @@ l'effettivo cambiamento delle coordinate dei punti che identificano le nostre di
 riconoscimento della gesture eseguita, la cui scritta verrà colorata di verde (rossa in origine).
 
 
-\subsection{PdfActivity}
+\section{PdfActivity}
 Dopo aver testato e dimostrato il corretto funzionamento del nostro applicativo, abbiamo deciso di applicare 
 quanto appena appreso a contesti quotidiani in modo da renderlo utile e funzionale per eventuali 
 utilizzatori. Abbiamo dunque applicato le nostre gesture alla lettura e all'interazione con un file pdf.\\
@@ -47,7 +47,7 @@ effettuate.
     %\includegraphics[width=0.7\textwidth]{images/pdfactivity.png}
 \end{figure}
 
-\subsubsection{Mapping gesture - azioni sul pdf }
+\subsection{Mapping delle gesture con azioni del pdf}
 Abbiamo così applicato il lavoro effettuato nel nostro MainActivty al pdf, mappando le gesture definite in precedenza a determinati azioni sul file pdf.
 
 \begin{itemize}
