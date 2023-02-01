@@ -1,8 +1,8 @@
-\chapter{Struttura del progetto}
+\chapter{Architettura del progetto}
 
 \section{Overview}
 Come input alla realizzazione della nostra applicazione, siamo partiti da una demo offerta direttamente da MediaPipe. In questa applicazione viene data la possibilità all'utente di visualizzare la mappatura delle proprie mani scegliendo diverse modalità di acquisizione dell'immagine.
-Oltre a file ausiliari come il \textit{manifest} o gli \textit{xml} di configurazione, il cuore del progetto è rappresentato da 3 file nella cartella \texttt{hands/ja-} \texttt{va/com/google/mediapipe/examples/hands}.
+Oltre a file ausiliari come il \textit{manifest} o gli \textit{xml} di configurazione, il cuore del progetto è rappresentato da 3 file nel package \texttt{hands/ja-} \texttt{va/com/google/mediapipe/examples/hands}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/struct_demo.png}
@@ -12,12 +12,12 @@ Oltre a file ausiliari come il \textit{manifest} o gli \textit{xml} di configura
 \noindent Nonostante noi ci siamo concentrati solo sull'input da streaming video, l'applicazione mette a disposizione 3 diverse modalità di acquisizione dell'input, rappresentate dall'enumerativo \texttt{InputSource} all'interno del quale troviamo \texttt{CAMERA}, \texttt{VIDEO} e \texttt{IMAGE}.\\
 
 
-\section{Applicazione finale}
+\section{Struttura del progetto}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/struct_progetto.png}
 \end{figure}
-All'interno della cartella \texttt{hands/java/com/google/mediapipe/examples/hands} abbiamo potuto eliminare la classe \texttt{HandsResultImageView}, utile solo con acquisizione dell'input tramite immagine statica; mentre la classe \texttt{HandsResultGlRenderer}, per il rendering su schermo, è stata lasciata sostanzialmente inalterata.\\
+All'interno del package \texttt{hands/java/com/google/mediapipe/examples/hands} abbiamo potuto eliminare la classe \texttt{HandsResultImageView}, utile solo con acquisizione dell'input tramite immagine statica; mentre la classe \texttt{HandsResultGlRenderer}, per il rendering su schermo, è stata lasciata sostanzialmente inalterata.\\
 Sono state invece applicate delle modifiche consistenti alla classe \texttt{MainActivity} (aggiungendo anche altre due classi \textit{Activity}) per implementare la logica applicativa.\\
 
 
