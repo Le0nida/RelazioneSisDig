@@ -1,7 +1,7 @@
 \chapter{Metodologie di riconoscimento delle gesture}
 \label{chap:metodi}
 
-Come già specificato in \ref{intro}, il framework mette a disposizione due collezioni distinte di punti tridimensionali: 
+Come già specificato in \hyperref[chap:landmarks]{\underline{MediaPipe Hands}}, il framework mette a disposizione due collezioni distinte di punti tridimensionali: 
 \begin{itemize}
     \item la lista dei landmark a coordinate globali con origine nel centro geometrico approssimato della mano
     \item la lista dei landmark con coordinate X e Y normalizzate all'intervallo [0.0 - 1.0] per le dimensioni dell'immagine in input, la coordinata Z trova il suo centro nella posizione del landmark del polso
@@ -38,9 +38,8 @@ Un parametro che abbiamo scelto di adottare nel sistema di riconoscimento è que
 Per ottenere questa informazione, abbiamo implementato una serie di funzioni di utilità che permettono di identificare il discostamento che una serie di punti ha dalla retta 3D formata da altri due punti dati; il calcolo di questa misura, unito a una lista di valori di errore ottenuti in modo sperimentale, permette di quantificare il livello di ripiegamento di un certo dito.
 
 \begin{figure}[H]
-    \caption{caption}
     \centering
-    \includegraphics[width=0.5\textwidth]{/home/riccardoob/RelazioneSisDig/chapters/RelazioneSisDig/images/mano_vettore.png}
+    \includegraphics[width=0.3\textwidth]{images/mano_vettore.png}
 \end{figure}
 
 Grazie a questa tecnica, unita alle metodologie sopra descritte, siamo riusciti a ottenere una identificazione molto più accurata della posizione delle dita di una mano e a ridurre significativamente il grado di sovrapposizione tra gesture.

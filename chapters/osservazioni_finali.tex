@@ -26,14 +26,25 @@ I dati presentati in seguito sono stati raccolti dal profiler di Android Studio 
     \item \textbf{RAM}: 6GB
 \end{itemize}
 
-L’ambiente di sviluppo Android Studio offre un comodissimo pannello per verificare il consumo relativo delle risorse utilizzate dalla propria applicazione. La seguente immagina riassume i nostri valori rilevati:
 
-%% inserimento immagini profiling con commenti e analisi %%
-\begin{figure}
-\includegraphics[width=\textwidth]{images/profiling_app.png}
+\noindent L'ambiente di sviluppo Android Studio offre un comodissimo pannello per verificare il consumo relativo delle risorse utilizzate dalla propria applicazione. La seguente immagina riassume i nostri valori rilevati:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/profiling_app.png}
 \end{figure}
 
-Il profiling è suddiviso in tre sezioni che corrispondono alle tre pagine visualizzabili, in ordine: pagina home, pagina start camera e pagina PdfReader. Nel complesso non abbiamo misurazioni stravolgenti, la CPU viene utilizzata mediamente il 17\% del suo potenziale quando il tracking delle mani è attivato (start camera e PdfReader), mentre alla home page dove non succede nulla giustamente il consumo è nullo tranne che al suo primo caricamento. La memoria viene utilizzata principalmente nella gestione dei Pdf con picchi massimi di 256MB. Mentre sotto il punto di vista dei consumi Android Studio pone nell’asse delle ordinate tre livelli: Light, Medium e High; al di là dei cambi di pagina che vengono etichettati come Medium, il consumo generale viene considerato Light. Siccome questo dato non ci ha orientato più di tanto per capire se tale consumo possa essere considerato tollerabile, come accennato nel paragrafo precedente, abbiamo provato molto empiricamente a verificare di quanto scendeva il livello di batteria durante l’utilizzo dell’app realizzando un calo di un 2\% ogni 4 minuti con una batteria 4000mAh. Facendo lo stesso con la nota app Instagram il consumo è risultato differente, con un uso di un 2\% ogni 7 minuti, quindi messa a confronto la nostra applicazione consuma il doppio. Ipotizzando uno scenario realistico dove consideriamo il 100\% di batteria di un utente intenzionato a studiare con la nostra applicazione(con le specifiche di dispositivo citate prima)  e dedicando un 80\% alla nostra applicazione si ottiene una durata massima di 2 ore e mezza. Esito non malvagio ma pensare che dopo 2 ore e mezza di lettura il dispositivo diviene inutilizzabile non è molto invitante, i ruoli però si potrebbero invertire se cambia il contesto dove si utilizza il riconoscimento gesture.
+\noindent Il profiling è suddiviso in tre sezioni che corrispondono alle tre pagine visualizzabili, in ordine: pagina \texttt{home}, pagina \texttt{start camera} e pagina \texttt{PdfReader}.\\
+Nel complesso non abbiamo misurazioni stravolgenti, la CPU viene utilizzata mediamente il 17\% del suo potenziale quando il tracking delle mani è attivato (\texttt{start camera} e \texttt{PdfReader}), mentre nella \texttt{home} page, dove non succede nulla, giustamente il consumo è nullo tranne che al suo primo caricamento.\\
+La memoria viene utilizzata principalmente nella gestione dei Pdf con picchi massimi di 256MB.\\
+\\
+\noindent Sotto il punto di vista dei consumi Android Studio pone nell'asse delle ordinate tre livelli: Light, Medium e High.\\
+Al di là dei cambi di pagina che vengono etichettati come Medium, il consumo generale viene considerato Light.\\
+Siccome questo dato non ci ha orientato più di tanto per capire se tale consumo possa essere considerato tollerabile, come accennato in precedenza, abbiamo provato molto empiricamente a verificare di quanto scendeva il livello di batteria durante l'utilizzo dell'app, realizzando un calo di un 2\% ogni 4 minuti con una batteria 4000mAh.\\
+Facendo lo stesso con la nota app \textit{Instagram} il consumo è risultato differente, con un uso di un 2\% ogni 7 minuti; quindi messa a confronto la nostra applicazione consuma il doppio.\\
+\\
+\noindent Ipotizzando uno scenario realistico dove consideriamo il 100\% di batteria di un utente intenzionato a studiare con la nostra applicazione (con le specifiche di dispositivo citate prima) e dedicando un 80\% alla nostra applicazione si ottiene una durata massima di 2 ore e mezza.\\
+Esito non troppo deludente, ma pensare che dopo 2 ore e mezza di lettura il dispositivo diviene inutilizzabile non è molto invitante. La situazione si potrebbe però invertire se si cambia il contesto in cui si utilizza il riconoscimento gesture.
 
 
 
