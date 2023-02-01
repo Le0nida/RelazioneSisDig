@@ -7,11 +7,16 @@ In particolare, noi abbiamo sfruttato la soluzione per il riconoscimento del mov
 \begin{itemize}
     \item zoom
     \item scorrimento verticale e laterale delle pagine
-    \item screenshot
+    \item condivisione
+    \item scroll continuo verso il basso
+    \item scelta del file da leggere
 \end{itemize}
-\noindent Abbiamo deciso di realizzare l'applicazione per ambiente Android, tramite l'utilizzo di Java ed Android Studio.
+\noindent Abbiamo deciso di realizzare l'applicazione per ambiente Android, tramite l'utilizzo di Java ed Android Studio.\\
+\\
+\noindent Prima di parlare del progetto in sè, abbiamo pensato di inserire un introduzione a \texttt{MediaPipe Hands}, 
+spiegando in particolare il funzionamento della pipeline di riconoscimento delle mani che implementa.
 
-
+\newpage
 \section{MediaPipe Hands}
 
 MediaPipe Hands offre funzionalità per il tracciamento delle mani e delle dita, utilizzando il ML per individuare 21 punti di riferimento a 3 dimensioni di una mano da un solo fotogramma.\\
@@ -22,7 +27,7 @@ Viene sfruttata una pipeline composta da due modelli che lavorano insieme:
 \end{enumerate}
 
 \noindent Il fatto di fornire al modello per i punti di riferimento un'immagine della mano accuratamente ritagliata diminuisce di gran lunga le elaborazioni necessarie, aumentando l'efficienza.\\
-Inoltre, nella pipeline i \textit{ritagli} della mano possono essere generati anche in base ai punti di riferimento identificati nel frame precedente, e solo quando il modello del punto di riferimento non è più in grado di identificare la presenza della mano viene invocato il modello di rilevamento del palmo.
+Inoltre, nella pipeline, i \textit{ritagli} della mano possono essere generati anche in base ai punti di riferimento identificati nel frame precedente, e, solo quando il modello del punto di riferimento non è più in grado di identificare la presenza della mano, viene invocato il modello di rilevamento del palmo.
 
 \subsubsection{Specifica delle pipeline}
 La pipeline è implementata come un \textbf{grafo} che utilizza un \textbf{sottografo per il tracking dei punti} dal modulo \texttt{landmark} e renderizza usando un sottografo dedicato al rendering.\\Il sottografo per il tracking dei punti utilizza al suo interno un'altro sottografo per il tracking e un \textbf{sottografo per il rilevamento della mano} dal modulo \texttt{palm detection}.
@@ -52,7 +57,7 @@ Il modello apprende quindi una rappresentazione della posizione del'interno dell
     \includegraphics[width=0.8\textwidth]{images/landmarks.png}
 \end{figure}
 
-
+\newpage
 \subsection{API} 
 
 \subsection{Opzioni di configurazione}
