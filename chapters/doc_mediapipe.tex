@@ -49,12 +49,12 @@ Infine, la perdita focale viene ridotta al minimo durante l'allenamento per supp
 \subsubsection{Hand Landmark Model} 
 
 Dopo il rilevamento del palmo, questo modello esegue, all'interno delle regioni rilevate, la localizzazione precisa di 21 punti della mano tramite \textbf{regressione}, ovvero la previsione diretta delle coordinate.\\
-Il modello apprende quindi una rappresentazione della posizione del'interno della mano coerente ed è robusto anche a mani parzialmente visibili.\\
+Il modello apprende quindi una rappresentazione della posizione dell'interno della mano coerente ed è robusto anche a mani parzialmente visibili.\\
 \\
 \noindent Per arrivare a questo risultato sono state annotate manualmente circa 30 mila immagini dal mondo reale con 21 coordinate 3D (valore Z preso tramite mappa di profondità). E' stato inoltre utilizzato un modello di mano sintetica su vari sfondi, mappato alle corrispondenti coordinate, in modo tale da avere un accuratezza maggiore.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/landmarks.png}
+    \includegraphics[width=0.95\textwidth]{images/landmarks.png}
 \end{figure}
 
 \newpage
@@ -68,14 +68,13 @@ Se impostato a \texttt{true}, il rilevamento manuale viene eseguito su ogni imma
 
 \paragraph{\texttt{MAX\_NUM\_HANDS}} Massimo numero di mani da rilevare ($2$ a default).
 
-\paragraph{\texttt{MODEL\_COMPLEXITY}} Complessità del modello di landmark: $0$ o $1$ (default). La precisione del punto di riferimante e la latenza aumentano con la complessità.
+\paragraph{\texttt{MODEL\_COMPLEXITY}} Complessità del modello di landmark: $0$ o $1$ (default). La precisione del punto di riferimanto e la latenza aumentano con la complessità.
 
 \paragraph{\texttt{MIN\_DETECTION\_CONFIDENCE}} Valore minimo di fiducia $[0.0, 1.0]$ nei confronti del modello di rilevamento della mano per considerare il rilevamento della mano corretto. A defult è $0.5$.
 
 \paragraph{\texttt{MIN\_TRACKING\_CONFIDENCE}} Valore minimo di fiducia $[0.0, 1.0]$ nei confronti del modello di tracking per considerare il rilevamento dei punti di riferimento corretto. Altrimenti, il modello di rilevamento della mano (palmo) verrà richiamato all'immagine in input successiva. Di conseguenza, aumentando questo valore avremo una robustezza maggiore, a discapito di un aumento di latenza. A defult è $0.5$.
 
-\vspace{+15 px}
-
+\newpage
 \subsubsection{Output}
 
 \paragraph{\texttt{MULTI\_HAND\_LANDMARKS}} Raccolta di mani rilevate/tracciate, ognuna rappresentata come una lista di 21 punti di riferimento a 3 dimensioni. In ogni punto \texttt{x} e \texttt{y} sono normalizzati ($[0.0, 1.0]$) rispetto alla larghezza e all'altezza dell'immagine. La coordinata \texttt{z} rappresenta invece la profondità del punto rispetto a quella del polso (considerato l'origine). Minore è il valore della \texttt{z}, più il punto è considerato vicino alla fotocamera.
@@ -84,14 +83,14 @@ Se impostato a \texttt{true}, il rilevamento manuale viene eseguito su ogni imma
 
 \paragraph{\texttt{MULTI\_HAND\_HANDEDNESS}} Raccolta delle \textit{handedness} della mani (destra/sinistra). Ogni mano è composta da un'etichetta (\texttt{label}) e da un punteggio (\texttt{score}). L'etichetta è una stringa di valore \texttt{left} o \texttt{right}, mentre il punteggio rappresenta la stima della probabilità di predizione corretta della mano (sempre $\ge 0.5$, mentre l'\textit{handedness} opposta è $1-$\texttt{score}). L'\textit{handedness} viene valutata considerando che l'immagine in input è specchiata. 
 
-\vspace{+10 px}
+\vspace{+40 px}
 
 \subsubsection{OpenGL ES}
 Per il rendering dell'input e dell'output viene utilizzato \texttt{OpenGL ES}, un sottoinsieme delle librerie grafiche di \texttt{OpenGL} pensato per dispositivi embedded.\\
 Nella porzione di codice sottostante viene mostrato un esempio di utilizzo.
 
-
-\begin{minted}[bgcolor=lightgray,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,escapeinside=||,mathescape=true]{Java}
+\begin{comment}
+    \begin{minted}[bgcolor=lightgray,framesep=2mm,baselinestretch=1.2,fontsize=\footnotesize,escapeinside=||,mathescape=true]{Java}
     // Vengono prima settate le opzioni di configrazione citate precedentemente
     HandsOptions handsOptions =
         HandsOptions.builder()
@@ -145,3 +144,5 @@ Nella porzione di codice sottostante viene mostrato un esempio di utilizzo.
                 glSurfaceView.getWidth(),
                 glSurfaceView.getHeight()));
 \end{minted}
+\end{comment}
+
